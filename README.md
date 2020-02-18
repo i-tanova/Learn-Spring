@@ -1,6 +1,8 @@
 # Learn-Spring
 Spring Framework 5 Udemy course
 
+- Install: Java, Maven, Gradle, IntelliJ Ultimate IDE
+
 ### Spring initializr
 
 https://github.com/spring-io/initializr
@@ -13,4 +15,11 @@ https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/s
 
 ## Simple Web App
 
-  * Choose as dependencie: Spring Web, Spring data JPA, H2 database
+  * Choose as dependencie: Spring Web, Spring data JPA, H2 database\
+    - File looks like: pom.xml (mvn), src, package, Application class, resources (stataic -web), test
+    
+  * Open in IntellJ - File -> New -> Project from existing sources -> Select the pom.xml file
+  - click pom.xml - spring boot dependencies and see how many they are
+  - click Maven intelij idea tool (tab) and look at dependecies
+  - Help.md - all links to help pages
+  - gitignore
