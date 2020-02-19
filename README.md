@@ -30,3 +30,17 @@ https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/s
      - SQL -> H2 DB
      
      Tip: to reinit a project from pom.xml got to pom.xml right click and select add as maven project
+     
+   * Git tips
+   Fork the original repo and clone it from IntellJ IDE, 
+   In the same folder execute command: git remote add originalRepo [link to original repo]
+   Execute fetch
+   Now you can compare from both sources: forked and original one
+   
+   * JPA Entities
+   - Java Persistence Api - Hibernate. Very broad theme.
+   
+   Tip: JDL-Studio for UML diagrams
+   
+   Author* -> Book * (Many to many relationship)   *_*
+   - Put entities classes at package "domain"
