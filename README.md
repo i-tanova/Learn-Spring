@@ -23,3 +23,10 @@ https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/s
   - click Maven intelij idea tool (tab) and look at dependecies
   - Help.md - all links to help pages
   - gitignore
+  
+  * You have Initializr inside IntelliJ Ultimate - File-> New -> Project -> Spring Initializr. Choose java version, name/
+     - Web -> Spring Web
+     - SQL -> Spring Data JPA
+     - SQL -> H2 DB
+     
+     Tip: to reinit a project from pom.xml got to pom.xml right click and select add as maven project
