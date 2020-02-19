@@ -13,7 +13,7 @@ https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/s
 
 *Choose Maven, Java, Don't choose snapchot version of Spring boot, pack as jar, Java 8,
 
-## Simple Web App
+### Simple Web App
 
   * Choose as dependencie: Spring Web, Spring data JPA, H2 database\
     - File looks like: pom.xml (mvn), src, package, Application class, resources (stataic -web), test
@@ -38,9 +38,9 @@ https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/s
    Now you can compare from both sources: forked and original one
    
    * JPA Entities
-   - Java Persistence Api - Hibernate. Very broad theme.
+     - Java Persistence Api - Hibernate. Very broad theme.
    
-   Tip: JDL-Studio for UML diagrams
+      Tip: JDL-Studio for UML diagrams
    
-   Author* -> Book * (Many to many relationship)   *_*
-   - Put entities classes at package "domain"
+     - Author* -> Book * (Many to many relationship)   *_*
+     - Put entities classes at package "domain"
