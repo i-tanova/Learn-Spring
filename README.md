@@ -52,4 +52,47 @@ https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/s
  * Spring Data Repository
  - Create package repositories
  - Create two interfaces: BookRepository, AuthorRepository that inherit CrudRepository<Book, Long> (Author for author)
+ 
+ * Initializing data
+ - Create package bootstrap and class inside BootstrapData that implements CommandLineRunner and have constructor
+  public BootstrapData(AuthorRepository authorRepository, BookRepository bookRepository) {
+        this.authorRepository = authorRepository;
+        this.bookRepository = bookRepository;
+    }
+  - Add annotation @Component 
+  - Save data as 
+  @Override
+    public void run(String... args) throws Exception {
+   authorRepository.save(oneAuthor);
+   }
+   
+   * One to Many relationship
+   - Create class Publisher. A book has one publisher, but a publisher has many books
+   - In Publisher add annotation:
+    @OneToMany
+    @JoinColumn(name="publisher_id")
+    
+    - In Book add
+      @ManyToOne
+    private Publisher publisher;
+    
+    * h2 database
+    - add to application.properties
+    ```
+spring.h2.console.enabled=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+```
+Then go to http://localhost:8080/h2-console and enter as JDBC driver url jdbc:h2:mem:testdb and user su/password
+
+* MVC architecture
+Controllers get receive requests from the user
+- Create controller
+add folder controller and a class BookController
+annotate with @Controller, add method getBooks() and annotate it with @RequestMapping("/books")
+
+ 
   
