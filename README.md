@@ -90,9 +90,23 @@ Then go to http://localhost:8080/h2-console and enter as JDBC driver url jdbc:h2
 
 * MVC architecture
 Controllers get receive requests from the user
-- Create controller
+* Create controller
 add folder controller and a class BookController
 annotate with @Controller, add method getBooks() and annotate it with @RequestMapping("/books")
+- Add constructor that receives Repository
+- Add parameter module Module to getBooks method and inside add module.setAttribute("books",repository.findAll)
+* Create View
+- Check for Spring boot tymeleaf dependency
+- Create folder/file: resources/templates/book/list.html
+- Add namespace to <html tag xmlns:th="http://www.thymeleaf.org"
+- Use thimeleaf th:each="book : ${books} and th:text="${books.id}"
+
+* Spring Pet Clinick application
+https://github.com/i-tanova/spring-petclinic
+git clone https://github.com/spring-projects/spring-petclinic.git
+cd spring-petclinic
+./mvnw package
+java -jar target/*.jar
 
  
   
