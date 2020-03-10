@@ -78,14 +78,14 @@ https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/s
     
     * h2 database
     - add to application.properties
-    ```
+
 spring.h2.console.enabled=true
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=password
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-```
+
 Then go to http://localhost:8080/h2-console and enter as JDBC driver url jdbc:h2:mem:testdb and user su/password
 
 * MVC architecture
@@ -107,6 +107,12 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
 ./mvnw package
 java -jar target/*.jar
+
+* Start new project
+- Create git repo
+- Create InteliJ IDA Sprng project using Core> Lambog, Dev tools, Web>Web
+Template> Thymelief SQL> JPA,H2, mySQL Ops>Actuator
+- Use 
 
  
   
