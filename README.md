@@ -112,7 +112,37 @@ java -jar target/*.jar
 - Create git repo
 - Create InteliJ IDA Sprng project using Core> Lambog, Dev tools, Web>Web
 Template> Thymelief SQL> JPA,H2, mySQL Ops>Actuator
-- Use 
+
+* Spring Dependency Injections
+* Create project sfg-di. Use Spring Initializr. Do not put dependencies and import it. 
+Click on pom file and select "Add as maven project". Run Maven task Lifecycle -> Verify
+* Spring Context - can give us a reference to a controller we've created
+ - Create package controllers and a controller inside: MyController. Annotate with @Controller
+ - Inside Application main method take that controller:
+ApplicationContext ctx = SpringApplication.run(Application.class, args);
+		MyController controller = (MyController) ctx.getBean("myController");
+  
+  - Injection by:
+     - class property - dont
+      -by setters - there are debats
+      - by constructor - most prefered
+      
+      - injecting Interfaces is preferable(SOLID)
+      
+      - Inversion of control -a.k.a IoC - inject implementations at runtime - runtime control
+      - DI - composition of a class vs IoC - runtime environment
+      - Best practices: Use constructor injections, use final properties, interfaces (if practical)
+      
+      class Controller{
+        public Service property;
+        private Service setter;
+        get(), set()
+        private Service constructorPropl
+        
+        Controller(constructorProp: Service){
+                constructorProp = constructorProp  // preffered way
+        }
+      }
 
  
   
