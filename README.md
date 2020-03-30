@@ -113,9 +113,18 @@ java -jar target/*.jar
 - Create InteliJ IDA Sprng project using Core> Lambog, Dev tools, Web>Web
 Template> Thymelief SQL> JPA,H2, mySQL Ops>Actuator
 
+* SOLID prnciples
+ - Single responsibility - Small classes, every class - one responsibility, Avoid God objects, Split to smaller classes
+ - Open/Closed principle - open for extension, closed for modificaion, Use abstract base classes
+ - Liskov substitude principle - looks like a duck, sounds like a duck but needs batttery - Wrong abstraction.
+ Do not introduce new behaviour extending a class, you should be able to change substitude with the parent class and the program should work.
+ - Interface segregation principle - Do not use one giant interface, use small and specific.
+ - Dependency inversion principle - Don't solder a lamp directly in the wall, use a plug. Avoid details in the abstraction. Details should depend on the abstraction. 
+
 * Spring Dependency Injections
 * Create project sfg-di. Use Spring Initializr. Do not put dependencies and import it. 
 Click on pom file and select "Add as maven project". Run Maven task Lifecycle -> Verify
+
 * Spring Context - can give us a reference to a controller we've created
  - Create package controllers and a controller inside: MyController. Annotate with @Controller
  - Inside Application main method take that controller:
@@ -123,8 +132,8 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
 		MyController controller = (MyController) ctx.getBean("myController");
   
   - Injection by:
-     - class property - dont
-      -by setters - there are debats
+      - by property - don't
+      - by setters - there are debats
       - by constructor - most prefered
       
       - injecting Interfaces is preferable(SOLID)
@@ -134,15 +143,34 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
       - Best practices: Use constructor injections, use final properties, interfaces (if practical)
       
       class Controller{
-        public Service property;
-        private Service setter;
+        public Service property;  // -Injections: class property - dont
+        private Service setter; // Injected as setter
         get(), set()
         private Service constructorPropl
         
-        Controller(constructorProp: Service){
+        Controller(constructorProp: Service){  // Constructor
                 constructorProp = constructorProp  // preffered way
         }
       }
+      
+      - If you have more than one Service implementation use annotation @Qualifier("setterInjectedService") (See SetterInjectedController)
+      - If you want one implementation to be default annotate it with @Primary (See project sfg-di - PrimaryGreetingService)
 
+     * Spring profile
+     
+     - Add service I18nEnglishService, I18nSpanishService and in I18nController 
+     - Annotate both services with @Service("i18nService")
+     - Annotate both services with @Service(@Service("i18nService")
+     - In the controller say Qualifier("i18nService")
+     - Now spring doesn't know wich one to take
+     ConflictingBeanDefinitionException: Annotation-specified bean name 'i18nService' for bean class conflicts
+     - Add annotation @Profile("EN") and @Profile("ES")
+     - Go to resources/application.properties and add: spring.profiles.active="EN"
+     
+     * Default profile
+     
+     - Add annotation @Profile({"EN", "default"}, remove resources/application.properties default profile
+     Now Intelij says: "No active profile set, falling back to default profiles: default"
+     
  
   
