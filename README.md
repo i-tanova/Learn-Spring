@@ -156,7 +156,7 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
       - If you have more than one Service implementation use annotation @Qualifier("setterInjectedService") (See SetterInjectedController)
       - If you want one implementation to be default annotate it with @Primary (See project sfg-di - PrimaryGreetingService)
 
-     * Spring profile
+- Spring profile
      
      - Add service I18nEnglishService, I18nSpanishService and in I18nController 
      - Annotate both services with @Service("i18nService")
@@ -167,7 +167,7 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
      - Add annotation @Profile("EN") and @Profile("ES")
      - Go to resources/application.properties and add: spring.profiles.active="EN"
      
-     * Default profile
+- Default profile
      
      - Add annotation @Profile({"EN", "default"}, remove resources/application.properties default profile
      Now Intelij says: "No active profile set, falling back to default profiles: default"
