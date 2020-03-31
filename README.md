@@ -172,5 +172,13 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
      - Add annotation @Profile({"EN", "default"}, remove resources/application.properties default profile
      Now Intelij says: "No active profile set, falling back to default profiles: default"
      
+     
+- Bean Lyfe Cycle
+    
+       - Two interfaces you can implement: InitializingBean -> afterPropertiesSet, DisposableBean -> destroy()
+       - Lyfe Cycle annotations: @PostConstruct, @PreDestroy
+       - Bean post processors - implement BeanPostProcessor -> postProcessBeforeInitialization, postProcessAfterInitialization
+       - Aware interfaces (Rarely used). ApplicationEventPublisher, ApplicationContextAware
+     
  
   
