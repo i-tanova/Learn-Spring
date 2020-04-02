@@ -179,6 +179,14 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
        - Lyfe Cycle annotations: @PostConstruct, @PreDestroy
        - Bean post processors - implement BeanPostProcessor -> postProcessBeforeInitialization, postProcessAfterInitialization
        - Aware interfaces (Rarely used). ApplicationEventPublisher, ApplicationContextAware
+       
+ - Open-closed principle - open for extension, close for modifications - use abstract classes and interfaces
+ - Interfaces segregation - Don't use giant overbloated interfaces, use smaller one
+ - Dependencies inversion - High-level modules should not depend on low-level modules.
+ 
+ - Interface naming - Don't use I in front of it. Use Impl for implementations if they are few.
+ 
+ - Pet Clinic POJO models: Person(firstName, lastName), Vet, Owner, PetType(name)
      
  
   
