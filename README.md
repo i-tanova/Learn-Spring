@@ -198,6 +198,10 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
      - From pom files move
                   - spring-boot-starter-actuator to web module
 		  - mysql, jpa and lamboc to data module
+		  
+		  
+		  
+		 
  
  
      
