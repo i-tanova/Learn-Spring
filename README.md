@@ -187,6 +187,19 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
  - Interface naming - Don't use I in front of it. Use Impl for implementations if they are few.
  
  - Pet Clinic POJO models: Person(firstName, lastName), Vet, Owner, PetType(name)
+ When you comment a commit in GitHub and add "Closes #2" - this links your code to the GitHub issue.
+ 
+ - Multimodule Maven project
+ We want to separete data package to another module
+  
+     - Click on Project and select New -> Module -> Maven
+     - Create two modules pet-clinic-data and pet-clinic-web
+     - Move *Applicatin class to web module -> java folder
+     - From pom files move
+                  - spring-boot-starter-actuator to web module
+		  - mysql, jpa and lamboc to data module
+ 
+ 
      
  
   
