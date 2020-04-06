@@ -180,9 +180,16 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
        - Bean post processors - implement BeanPostProcessor -> postProcessBeforeInitialization, postProcessAfterInitialization
        - Aware interfaces (Rarely used). ApplicationEventPublisher, ApplicationContextAware
        
- - Open-closed principle - open for extension, close for modifications - use abstract classes and interfaces
- - Interfaces segregation - Don't use giant overbloated interfaces, use smaller one
- - Dependencies inversion - High-level modules should not depend on low-level modules.
+-Open-Cosed principle
+	For good application design and the code writing part, you should avoid change in the existing code when requirements change. Open for extension. Closed for modifications. Use abstract classes and interfaces.
+- Interface Segregation Principle
+ 	Your interface should not be bloated with methods that implementing classes don’t require.
+	The Interface Segregation Principle advocates segregating a “fat interface” into smaller and highly cohesive interfaces, known as “role interfaces”.
+- Dependency Inversion Principle
+	avoid tightly coupled code. High-level modules should not depend on low-level modules.
+	
+- Interface naming convention
+   - Don't start it with I. When there is one implementation name it InterfaceImpl but when there are few - name them by the difference.
  
  - Interface naming - Don't use I in front of it. Use Impl for implementations if they are few.
  
@@ -198,6 +205,7 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
      - From pom files move
                   - spring-boot-starter-actuator to web module
 		  - mysql, jpa and lamboc to data module
+		  
 		  
 		  
 		  
