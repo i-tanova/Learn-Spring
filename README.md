@@ -203,8 +203,52 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
      - Create two modules pet-clinic-data and pet-clinic-web
      - Move *Applicatin class to web module -> java folder
      - From pom files move
-                  - spring-boot-starter-actuator to web module
-		  - mysql, jpa and lamboc to data module
+                  - spring-boot-starter-actuator, thymeleaf, starter-web, dev tools, starter test to web module
+		  - mysql, jpa and lamboc to data module, h2
+		  - move models - Person, Vet etc.. to data module
+		  - add dependency for web to data module like that:
+		  
+		  <dependency>
+                       <artifactId>pet-clinick-data</artifactId>
+                       <groupId>com.tanovait</groupId>
+                       <version>0.0.1-SNAPSHOT</version>
+                 </dependency>
+		 
+		 - copy dependency start-test from web to data
+		 - We want data module to be compiled as jar that doesn not contain its dependencies (this is default behaviour) 
+		 
+		  1. Copy build plugin from root module to data:
+		      <build>
+			<plugins>
+			    <plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			    </plugin>
+			</plugins>
+    		     </build>
+		     
+		   2. Add this extension:
+			<executions>
+			  <execution>
+			    <id>repackage</id>
+			    <goals>
+			      <goal>repackage</goal>
+			    </goals>
+			    <configuration>
+			      <classifier>exec</classifier>
+			    </configuration>
+			  </execution>
+			</executions>
+			
+		  3. On root module run Maven task "clean"
+		  4. Run task "package"
+		  * I had an error that ther is no main class and decided to add Application class inside data as:
+		  https://www.technicalkeeda.com/spring-boot-tutorials/error-failed-to-execute-goal-orgspringframeworkbootspring-boot-maven-plugin202releaserepackage-default-on-project-springboot-execution-default-of-goal-orgspringframeworkbootspring-boot-maven-plugin202releaserepackage-failed-unable-to-find-main-class
+		  5. Move Root module "resources" folder content to web module "resources" folder
+		  6. Move root module test content to test folder in web
+		  7. Delete root module "src" directory
+		  
+		  ###Commit Closes #1
 		  
 		  
 		  
