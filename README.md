@@ -217,40 +217,76 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
 		 - copy dependency start-test from web to data
 		 - We want data module to be compiled as jar that doesn not contain its dependencies (this is default behaviour) 
 		 
-		  1. Copy build plugin from root module to data:
-		      <build>
-			<plugins>
-			    <plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			    </plugin>
-			</plugins>
-    		     </build>
-		     
-		   2. Add this extension:
-			<executions>
-			  <execution>
-			    <id>repackage</id>
-			    <goals>
-			      <goal>repackage</goal>
-			    </goals>
-			    <configuration>
-			      <classifier>exec</classifier>
-			    </configuration>
-			  </execution>
-			</executions>
+		  1. Add this property to data module pom.xml
+		       <properties>
+			 <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
+		      </properties>
 			
-		  3. On root module run Maven task "clean"
-		  4. Run task "package"
-		  * I had an error that ther is no main class and decided to add Application class inside data as:
-		  https://www.technicalkeeda.com/spring-boot-tutorials/error-failed-to-execute-goal-orgspringframeworkbootspring-boot-maven-plugin202releaserepackage-default-on-project-springboot-execution-default-of-goal-orgspringframeworkbootspring-boot-maven-plugin202releaserepackage-failed-unable-to-find-main-class
-		  5. Move Root module "resources" folder content to web module "resources" folder
-		  6. Move root module test content to test folder in web
-		  7. Delete root module "src" directory
+		  2. On root module run Maven task "clean"
+		  3. Run task "package"
+		  4. Move Root module "resources" folder content to web module "resources" folder
+		  5. Move root module test content to test folder in web
+		  6. Delete root module "src" directory
 		  
 		  ###Commit Closes #1
 		  
-		  
+- Maven Release Plugin
+            http://maven.apache.org/maven-release/maven-release-plugin/
+	    
+	http://maven.apache.org/maven-release/maven-release-plugin/examples/prepare-release.html
+	    
+	To prepare a release: 
+	    - Check for uncommited changes
+	    - Check that there are no snapshot dependencies
+	    - Increase the version in pom.xml
+	    - Transform the SCM information in the POM to include the final destination of the tag
+	    *SCM - Source control management
+	      ....
+	      
+	 -See section Perform a release
+	 
+	 Note: See Guru DevOps course for Deployment!!!
+
+Spring Certification: https://store.education.pivotal.io/confirm-course?courseid=EDU-1202
+https://medium.com/@raphaelrodrigues_74842/how-i-became-a-pivotal-spring-professional-certified-5-0-c6348da5f80b
+
+https://tanzu.vmware.com/training/courses/core-spring-training
+
+  In the root module add this dependency to build plugin.
+  <build>
+	<plugins>
+		.....
+		
+		<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <goals>
+                        install
+                    </goals>
+                </configuration>
+            </plugin>
+  - See version of the snapshot <version>0.0.1-SNAPSHOT</version>
+  - Add 
+                  <scm>
+        		<developerConnection>scm:git:https://github.com/i-tanova/spring-pet-clinic.git</developerConnection>
+    		  </scm>
+  - Run $ mvn release:prepare
+  
+  - Add auto versioning like:
+                    <goals>
+                        install
+                    </goals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+  - Run mvn release:prepare
+  Building spring-pet-clinic 0.0.2-SNAPSHOT
+  
+  - Now in GitHub - Branch - extendible menu - there is a tag: release.0.0.1
+  
+       ###Commit Closes #3
+  
+
+   
 		  
 		  
 		 
