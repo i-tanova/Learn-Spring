@@ -284,6 +284,10 @@ https://tanzu.vmware.com/training/courses/core-spring-training
   - Now in GitHub - Branch - extendible menu - there is a tag: release.0.0.1
   
        ###Commit Closes #3
+       
+ - Create Services interfaces
+     - Create package services inside data module
+     - Add interfaces: OwnerService (methods findById, findByName, 
   
 
    
