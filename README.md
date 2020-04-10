@@ -228,7 +228,7 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
 		  5. Move root module test content to test folder in web
 		  6. Delete root module "src" directory
 		  
-		  ###Commit Closes #1
+## Issue 1 Closed
 		  
 - Maven Release Plugin
             http://maven.apache.org/maven-release/maven-release-plugin/
@@ -283,11 +283,18 @@ https://tanzu.vmware.com/training/courses/core-spring-training
   
   - Now in GitHub - Branch - extendible menu - there is a tag: release.0.0.1
   
-       ###Commit Closes #3
+       ## Issue 3 Closed
        
  - Create Services interfaces
      - Create package services inside data module
-     - Add interfaces: OwnerService (methods findById, findByName, 
+     - Add interfaces: OwnerService (methods findById, findByName, findByLastName, getAll, save), VetService, PetService -same methods
+     
+     ## Issue 5 Closed
+     
+     - Implement Base Entity
+         
+	  - Add BaseEntity class in model package.
+	  - Add Long id property
   
 
    
