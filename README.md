@@ -228,7 +228,7 @@ ApplicationContext ctx = SpringApplication.run(Application.class, args);
 		  5. Move root module test content to test folder in web
 		  6. Delete root module "src" directory
 		  
-## Issue 1 Closed
+  #### Issue 1 Closed
 		  
 - Maven Release Plugin
             http://maven.apache.org/maven-release/maven-release-plugin/
@@ -283,18 +283,40 @@ https://tanzu.vmware.com/training/courses/core-spring-training
   
   - Now in GitHub - Branch - extendible menu - there is a tag: release.0.0.1
   
-       ## Issue 3 Closed
+       #### Issue 3 Closed
        
  - Create Services interfaces
      - Create package services inside data module
      - Add interfaces: OwnerService (methods findById, findByName, findByLastName, getAll, save), VetService, PetService -same methods
      
-     ## Issue 5 Closed
+     #### Issue 5 Closed
      
-     - Implement Base Entity
-         
+ - Implement Base Entity
+           Base entity is JPA concept
 	  - Add BaseEntity class in model package.
 	  - Add Long id property
+	  - extend Serializable
+	  - Make Person to extends BaseEntity 
+	  - Make PetType to extends BaseEntity
+	  - Make Pet extends BaseEntity
+	  * All classes must extend BaseEntity
+	  
+#### Issue 10 Closed
+
+## Build Spring Boot Jokes App
+- Create it from Spring Initializr with only Web and Thimelife dependencies
+- Add external jar: Spring guru Chuk Norris as dependency
+- Create Service class to return joke from Chuk Norris dependency lib
+- Create Spring MVC Controller 
+- Map context root / to Jokes view
+- Add model Joke with "joke" property
+- Return view name of "chucknorris" 
+- Create Thymeleaf view "chucknorris"
+- Display Joke string
+- Run app
+- Refresh for more jokes
+
+	  
   
 
    
