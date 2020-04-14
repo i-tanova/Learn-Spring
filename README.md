@@ -316,6 +316,12 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 - Run app
 - Refresh for more jokes
 
+* You can change Spring banner at the terminal when starting the application
+
+## Spring Pet Clinic
+
+ - Refactor Services to common interfaces
+
 	  
   
 
