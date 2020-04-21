@@ -384,6 +384,38 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	    - add annotation to Application class @ImportResource("classpath:chuck-config.xml")
 	    
      - Using Spring Factory Beans
+            - For more complex configirations
+	    - Create Bean Factory inside @Configuration class
+	    - GreetingServiceFactory with method getService(String language)
+	    - config package with GreetingServiceConfig @Configuration
+	    - method getServiceFactory that returns GreetingServiceFactory and has parameter (repository) and @Bean annotation.
+	    
+     - Spring Boot Configuration
+             - Dependency management - Maven or Gradle (Spring boot version for every Spring Framework v)
+	     - Maven - whenever possible don't specify versions in your pom.xml, because Spring takes care of this
+	     - Auto configuration will bring a lot of jars to the project. You can exclude with:
+	     @EnableAutoConfiguration(exclude={})
+	     
+    - Spring Bean Scope
+            - Singleton (default)
+	    - Prototype - new instance at each bean request
+	    - Request - single instance for each http request
+	    - Session - single instance for http session
+	    - Global- Session - not used
+	    - Application - bean is binded with the lifecycle of ServletContext
+	    - WebSocket - valid through a life of a web socket.
+	    - Custom - you can defind your own scope
+	    
+	    * Most used: Singleton, Prototype
+	    
+	    - Declaring scope: 
+	        - For singleton - declaration is not needed
+		
+    - Load Bootstrap data on startup
+            - In the web module create package "bootstrap"
+	    - Create class DataLoader that implements CommandLineRunner
+	    - Add constructor that initializes OwnerService and PetService with Map implementations
+	    - in run method add owners and vets and call service.save()
      
 
   
