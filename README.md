@@ -352,6 +352,28 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	
 ### Issue 7 closed	
 
+### Section 5. Spring Framework Configuration
+- How we define Spring Beans
+
+     - Spring Configuration Options
+     	- XML base configuration - legacy but still supported, widly used
+	- Annotation based configuration - Since Spring 3, class based annotations @Controller, @Service..
+	- Java based configruation - Spring 3, Java classes for configuration @Configuration and @Bean annotations - Preffered
+	- Groovy Bean Defenition DSL - Spring 4, beans in Groovy, borrowed from Grails - used from Groovy community
+	
+     - Spring stereotypes
+           - @Component -> @Controller, @Repository, @Service
+	   - @Controller -> @RestController ( @Controller and @RestBody)
+	   
+	   - @Repository adds error handling
+	   
+     - Spring commponent scan
+           - How to tell Spring which directories to scan, because in a large project scanning all will take a lot of time
+	   - @ComponentScan annotation overrides default Spring scanning behaviour. By default Spring scanns for packages under Application package
+	   
+     - Java coniguration example
+           - We will modify Jokes application to use java configuration
+     
 
   
 
