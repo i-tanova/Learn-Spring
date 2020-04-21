@@ -373,6 +373,17 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	   
      - Java coniguration example
            - We will modify Jokes application to use java configuration
+	   - Modify JokeServiceImpl to accept ChuckNorrisQuotes object in the constructor
+	   - Add package "config" and class ChuckConfigruation
+	   - Add annotation @Configuration and a method that returns ChuckNorrisQuotest object with annotation @Bean
+	   
+     - Spring xml configiration example
+            - Click on resources - New -> XML configuration file -> Spring Configuration
+	    - add chuck-config class
+	    - add <bean name="chuckNorrisQuotes" class="guru.springframework.norris.chuck.ChuckNorrisQuotes" />
+	    - add annotation to Application class @ImportResource("classpath:chuck-config.xml")
+	    
+     - Using Spring Factory Beans
      
 
   
