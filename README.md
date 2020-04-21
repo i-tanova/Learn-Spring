@@ -321,8 +321,38 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 ## Spring Pet Clinic
 
  - Refactor Services to common interfaces
+     - Create GitHub issue #10
+     - Create interface CrudService (watch from CrudRepository)
+     - add typed parameters <T, ID>
+     - add methods: save, getAll - returns Set<T>, findById(), delete, deleteById
 
-	  
+#### Issue 10 Closed
+
+ - Issue 6. Implement Map based services
+     - Create abstract class AbstractMapService<T, ID>
+     - create inside map<ID, T>
+     - add methods - findAll(), findById, save, delete, delteById
+     - create classes OwnerMapService, Vet.., Pet.. that extend AbstractMapService and implement CrudService
+     calling super methods
+### Issue 6 closed
+
+- Issue 8. Add pet clinic index page and controller
+           - inside web module add resources/templates - index.html with thymeleaf text "Index"
+	   - create package controllers
+	   - Add Index Controller with method @RequestMap({"", "/", "index", "index.html"}) that returns "index"
+### Issue 8 closed
+
+- Issue 7. Create vet and owner index page and controller.
+        - Crete folder templates/vets/index.html
+	- Create controller VetsController with RequestMap({"vets", "vets/index", "vets/index.html"})
+	- Same for owner
+	- You can put 
+	       @Controller
+               @RequestMapping("/owners") and for the method RequestMap({"", "/"...})
+	
+### Issue 7 closed	
+
+
   
 
    
