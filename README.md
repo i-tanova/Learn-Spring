@@ -417,7 +417,13 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	    - Add constructor that initializes OwnerService and PetService with Map implementations
 	    - in run method add owners and vets and call service.save()
      
-
+     - Issue 21. Implement Spring Configuration for Services
+           - Add @Service annotation to VetMapService and OwnerMapService
+	   - In DataLoader add both service as constructor parameters
+	   * Note in Spring 5 youdon't need @Autowired for constructor params
+	   Issue 21 Closed
+	   
+	
   
 
    
