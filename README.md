@@ -423,6 +423,22 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	   * Note in Spring 5 youdon't need @Autowired for constructor params
 	   Issue 21 Closed
 	   
+     - Issue 14. List owners
+           - Modify OwnerController to have private final field OwnerService
+	   - Add OwnerService as constructor parameter
+	   - Add to method listAll parameter Model model
+	   - Call model.setArgumetn("owners", service.listAll)
+	   - Inside owners/index.html use thymeleaf th:forEach to list owners
+	   
+     - Autogenerate ids
+            - Add method getNextId() to AbstractMapService
+	    - Collections.max(map.keySet()) + 1
+	    - Check if map is not empty
+	    - Make T extends BaseEntity and ID to extend Long
+	    - Remove paramter id to add method
+	   
+     
+	   
 	
   
 
