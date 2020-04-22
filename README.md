@@ -436,6 +436,39 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	    - Check if map is not empty
 	    - Make T extends BaseEntity and ID to extend Long
 	    - Remove paramter id to add method
+      
+     - External properties
+             - Create resource/datasource.properties file
+	     - Fill some properties
+	      - Create class config/PropertiesConfig
+	      - Add @Configuration annotation
+	      - Add @PropertySource("classpath:datasource.properties") - this can be a list of values
+	      - add method properties() that returns new instace of
+	      PropertySourcesPlaceholderConfigurer
+	      - add @Bean annotation to method
+	      - add fields for all properties with annotation  @Value("${propname}")
+	      - Get class as ctx.getBean(FakeDataSource.class
+     
+     - Environment properties
+                - add property from Android studio -> project configuration
+		- add @Configuration class
+		- add field Environment env; with annotation @AutoWired
+		- env.getProperty("USERNAME")
+    
+     - Spring boot application properties
+                - Default way
+		 - appplication.properties
+		 
+     - YAML - yet another markup language
+              - spaces are important
+	      - don't use tabs
+	      - file with extension yml
+	      
+     - resoureces - new - application.yml
+          guru:
+	     jms:
+	        username: JMS username
+		password: passsword
 	   
      
 	   
