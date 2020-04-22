@@ -1,4 +1,4 @@
-# Learn-Spring
+# Learn Spring
 Spring Framework 5 Udemy course
 
 - Install: Java, Maven, Gradle, IntelliJ Ultimate IDE
@@ -12,6 +12,8 @@ Generate a backbone of a project here: start.spring.io
 https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/spring-boot-starters
 
 *Choose Maven, Java, Don't choose snapchot version of Spring boot, pack as jar, Java 8,
+
+* Documentation: https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-developing-web-applications
 
 ### Simple Web App
 
