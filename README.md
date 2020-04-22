@@ -475,6 +475,10 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	    - properties files can override each other
 	    - there is yierarchy in which application.yml is first then apppication-profile.properties and then application.properties
 	    - yml files can contain two files separated with --- delimiter
+
+### Section 7. Web development with Spring MVC
+
+  - Start recipe project, Http protocol, Developer tools, Bootstrap, Jquery, JPA model for Recipes project
        
 	   
      
