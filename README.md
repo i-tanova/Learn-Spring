@@ -469,6 +469,13 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	     jms:
 	        username: JMS username
 		password: passsword
+     
+     - Externalized Configuration
+            - Read here:https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config
+	    - properties files can override each other
+	    - there is yierarchy in which application.yml is first then apppication-profile.properties and then application.properties
+	    - yml files can contain two files separated with --- delimiter
+       
 	   
      
 	   
