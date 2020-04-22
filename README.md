@@ -481,6 +481,51 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 ### Section 7. Web development with Spring MVC
 
   - Start recipe project, Http protocol, Developer tools, Bootstrap, Jquery, JPA model for Recipes project
+  
+  - Introduction to Thymeleaf
+           - Java template engine
+	   - Replacement for JSP
+	   - It is not tied to web environment, it is not a web framework,  it produces pure HTML 5
+	   - JSP is not pure html
+	   
+ - Add index page
+          - add controllers/IndexController
+	  - Annotate with @Controller and @RequestMapping({"/", "", "/index"}) getIndex method that returns "index"
+	  - Create templates/index.html
+	  - add namespace xmlns:th="http://www.thymeleaf.org"
+	  * If you use snapchot of spring boot you need to import snapshot repository
+	  
+ - HTTP 
+          - Hypertext transfer protoclol
+	       - Tim Berners Lee 1989 CERN
+	        - telnet google.com 80
+		- HTTP/0.9
+		 -HTTP 1.0 until 1995
+		 - HTTP/1.1 1997, updated 1999 and 2014 - keep alive connections, transfer encode, chunked encoding transfers, bite range requests,request pipeline
+		 added coockies, encoding, charset
+		 - HTTP 2.0 2015 - improved performance
+
+- HTTP request methods
+            - GET - resource, visit page
+	    - HEAD - like GET but asks for meta info, no body
+	    - POST - create
+	    - PUT - create or update
+	    - DELETE
+	    - TRACE
+	    - OPTIONS
+	    - CONNECT
+	    - PATCH
+	    - Safe methods: GET, HEAD, OPTIONS, TRACE
+	    - IDEPONTENT methods(It is safe to repeat(retry)):  PUT, DELETE + Safe methods
+	    - Non idepontent methods - POST
+	    - Methods with request body - POST, PUT
+	    - NO BODY - GET, DELETE, HEAD
+	    - HTTP Status codes: 
+	         - 100 - information
+		 - 200 - success (200 - ok, 201 - created, 204 - accepted)
+		 - 300 - redirections (301 moved permanently)
+		 - 400 - client error (400 bad request, 401 not authorized, 404 not found)
+		 - 500 - server error (503 service unavaliable server is overloaded, temporary condition)
        
 	   
      
