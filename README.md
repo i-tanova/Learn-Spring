@@ -1,5 +1,6 @@
 # Learn Spring
-Spring Framework 5 Udemy course
+Spring Framework 5 Begginer to guru Udemy course
+Spring Framework 5: Spring Framework 5, Spring Boot 2, Spring MVC, Spring Data JPA, Spring Data MongoDB, Hibernate
 
 - Install: Java, Maven, Gradle, IntelliJ Ultimate IDE
 
@@ -526,6 +527,25 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 		 - 300 - redirections (301 moved permanently)
 		 - 400 - client error (400 bad request, 401 not authorized, 404 not found)
 		 - 500 - server error (503 service unavaliable server is overloaded, temporary condition)
+
+- Developer tools
+              - Chrome - Developer Tools - Networking Tab
+	      - Firefox developer edition
+	      - Safari Web Inspector
+	      - Axis TCP Monitorе Intelij Plugin
+	            - Set port to 8081
+		    - Reload app changing the port to localhost:8081
+	      - Spring Boot dev tools:
+	            - Spring boot dev tools maven artifact
+		    - triggers restart when class is changed
+		    - Live reload - reload the browser when code is changed
+		    - includes Live reload server
+		    - Browser plugins are available at livereload.com
+	     - Configure Spring boot dev tools
+	            - Inside Intelij find action "Registry.."
+		    - Enable "compiler.automake.allow.when.app.running"
+		    - Choose Project->Compiler-> Build project automatically
+		    
        
 	   
      
