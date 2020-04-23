@@ -644,7 +644,11 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 </div>
 
 
-- 
+- Add internationalization
+       - Copy resources/messages folder
+       - Add in application.properties
+      # Internationalization
+spring.messages.basename=messages/messages
        
 	   
      
