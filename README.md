@@ -545,6 +545,20 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	            - Inside Intelij find action "Registry.."
 		    - Enable "compiler.automake.allow.when.app.running"
 		    - Choose Project->Compiler-> Build project automatically
+	    
+- Copy all static resources form Pet Clinic
+                   - Downoad Spring Pet Clinic project as zip
+		   - Create folder in web module - resources/static/resources
+		   - Paste folders "fonts" and "images" from the old project
+		   - Tomcat search for folder static
+		   - Git doesn't commit empty directories
+
+- Copy master template
+                   - Old pet clinick welcome.html file has this :
+		   th:replace="~{fragments/layout :: layout (~{::body},'home')}
+		   It means - replace body with templates/fragments/layout.html
+		   - Into layout.html we see th: include={template} <-- merge code here
+		   - Copy the whole "fragments" directory into templates directory
 		    
        
 	   
