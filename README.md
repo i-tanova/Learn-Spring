@@ -632,6 +632,19 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	- Copy less folder
 	 - Go to maven tool window -> root project -> Lyfecycle. Execute clean and package tasks
 		    
+- Apply Master Layout To Index Page
+         - copy form wellcome.html 
+	 - th:replace="~{fragments/layout :: layout (~{::body},'home')}"
+	 -<h2 th:text="#{welcome}">Welcome</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <img class="img-responsive" src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}"/>
+    </div>
+</div>
+
+
+- 
        
 	   
      
