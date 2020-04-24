@@ -651,8 +651,17 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 
 - Apply master layout on ownres page
          - go to the old project templates/owners/ownersList.html
-	 - copy 
-       
+	 - copy th:replace="~{fragments/layout :: layout (~{::body},'owners')}"
+	 - add it to templates/owners/index.thml
+	 - add class="table table-striped" to table html element
+	 - copy style to "th" element
+	 - go to http://localhost:8080/owners
+	 
+- Apply master layout to vet page
+          - go to old project templates/vets/vetsList
+	  - copy th:replace="~{fragments/layout :: layout (~{::body},'vets')}"
+          - copy table style
+	  - go to http://localhost:8080/vets
 	   
      
 	   
