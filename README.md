@@ -645,10 +645,13 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 
 
 - Add internationalization
-       - Copy resources/messages folder
-       - Add in application.properties
-      # Internationalization
-spring.messages.basename=messages/messages
+       - Copy resources/messages folder in the same folder
+       - Add in application.properties:
+         spring.messages.basename=messages/messages
+
+- Apply master layout on ownres page
+         - go to the old project templates/owners/ownersList.html
+	 - copy 
        
 	   
      
