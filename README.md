@@ -683,7 +683,19 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	    - Implement methods calling super
 	    - Add @Service annotation
 	    
-- Pet type data on start up
+- Add Pet Types in with Bootstrap (startup) #31
+           - In web module find com.tanovait.springpetclinic.bootstrap
+	   - DataLoader add lines
+	         PetType dog = new PetType()
+		 dog.setName("dog")
+	   - Add service PetTypeService as constructor parameters
+	   - Call petTypeService.save(dog) and with returned instance
+	   - Do the same for cat
+	   
+- Enhance Owners with Contact info and Pets on startup
+           -
+	 
+	 
 	    
 	
 	 
