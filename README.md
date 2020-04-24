@@ -664,6 +664,29 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	  - go to http://localhost:8080/vets
 	  
 	  !! When you have problem with the style do maven task: clean and then package
+	  
+- Create Visit, Pet Speciality Entities
+         - Go to data module - Owner and add Set<Pet>
+	 - Add getter and setter
+	 - Add Visit model that extends BaseEntity (LocalDate, description, Pet)
+	 - Add model Speciality(description)
+	 - Add Set of Specialties as field to model Vet
+
+- Create contact info
+            - Add properties address, city, phonenumber to Owner
+	    
+- Create pet type map service
+            - Add interface PetTypeService to services package
+	    - Extend CrudService<PetType, Long> 
+	    - Add map based implementation in package service.map - PetTypeMapService
+	    - Extend AbstractMapService<PetType, Long>
+	    - Implement methods calling super
+	    - Add @Service annotation
+	    
+- Pet type data on start up
+	    
+	
+	 
 
 	   
      
