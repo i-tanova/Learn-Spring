@@ -662,6 +662,9 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	  - copy th:replace="~{fragments/layout :: layout (~{::body},'vets')}"
           - copy table style
 	  - go to http://localhost:8080/vets
+	  
+	  !! When you have problem with the style do maven task: clean and then package
+
 	   
      
 	   
