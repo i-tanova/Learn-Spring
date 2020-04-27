@@ -716,6 +716,23 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	- Add Map based implementation
 	- Don't forget @Service annotation
 	* Use Intelij IDEA split horizontally windows
+	
+- Create Specialty, add to Vets at Startup(Bootstrap) #33
+        - Use SpecialtyService inside DataLoader
+        - Create specialty - surgery, dentistry, radiology
+	- Save them in the SpecialtyService
+	- Add saved instances (they have id) to the vet and vet1 instances before saving the Vet
+	- add private method loadData containing all the logic
+	- add check
+	
+	if(petTypeService.getAll().size() == 0) {
+            System.out.println("Load data");
+            loadData();
+        }
+	
+	- In the VetMapService when saving a Vet check if there are Specialty
+	- If they are - forEach and check if each has Id
+	- If id is missing - save Specialty to SpecialtyService and set returned Id to the specialty 
 	    
 	
 	 
