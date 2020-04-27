@@ -693,7 +693,23 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	   - Do the same for cat
 	   
 - Enhance Owners with Contact info and Pets on startup
-           -
+           - Add reference to services PetService and PetTypeService to OwnerMapService
+	   - Whenever owner is saved check if it has pets. Check if pets have id. If the dont - call petService.save and set the id. 
+	   
+	      if(pet.getId() == null){
+                       Pet savedPet =  petService.save(pet);
+                       pet.setId(savedPet.getId());
+                    }
+		    
+	
+	Check if those have pet type  - throw exception if they dont, check pet type - id, if they dont have it call petTypeService.save()
+	   Check if they have pet type. Check if pet type has id. If it doesn't - save them.
+	   - At DataLoader - create Pet for onwner 1 nad 2 and 
+	                 - Set the pet's owner  - pet.setOwner(owner)
+			 - Set owner's pet      - owner.setPet(pet)
+			 - Save the owner to the service - service.saveOwner() - here we will check for pets, petype, pet
+			 We will throw  throw new RuntimeException("Pet type is required"); if pet type is missing from Pet
+	  
 	 
 	 
 	    
