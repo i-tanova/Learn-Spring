@@ -711,7 +711,11 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 			 We will throw  throw new RuntimeException("Pet type is required"); if pet type is missing from Pet
 	  
 	 
-	 
+- Create Specialty Map Service #30
+        - Add interface SpecialtyService that extends CrudService<Specialty
+	- Add Map based implementation
+	- Don't forget @Service annotation
+	* Use Intelij IDEA split horizontally windows
 	    
 	
 	 
