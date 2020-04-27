@@ -734,6 +734,16 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	- If they are - forEach and check if each has Id
 	- If id is missing - save Specialty to SpecialtyService and set returned Id to the specialty 
 	    
+- Menu Links Are Broken #44
+        - Find Owners and Error page are not implemented yet so:
+        - Add html template for notimplemented page
+	- At OwnersController add: 
+	 @RequestMapping("find") 
+	 method that maps this page
+	 - At IndexController add: RequestMapping ("oups) that returns same
+	 - List of vets link is broken. It is vets.html
+	 - Go to VetsController and att "/vets.html" to the request method mapping for method listVets
+	 
 	
 	 
 
