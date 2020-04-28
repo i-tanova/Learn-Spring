@@ -744,6 +744,53 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	 - List of vets link is broken. It is vets.html
 	 - Go to VetsController and att "/vets.html" to the request method mapping for method listVets
 	 
+### JPA Data Modeling with Spring & Hibernate
+  - Relationships one to many, many to many, spring data jpa repositories, database initialization, display list of recipes on index page, 
+            
+	   - JPA Entity Relationship
+	           - @OneToOne
+		   - @OneToMany - one has a  List, Set.. of the other
+		   - @ManyToOne
+		   - @ManyToMany - each has List of the other, join table relationship
+		   - Unidirectional - one way, one side desn't know about the other
+		   - Bidirectional - both sides know about each other, Recommended!
+		   - Owning side - holds foreign key in DB
+		   - mappedBy - field that owns the reference of the relationship
+		   
+	   - Fetch type
+	         - Lazy - data is not queued until referenced
+		 - Eager - data is queued upfront
+		 - Hibernate 5 supports the JPA 2.1 Fetch Type Defaults
+		           - One to Many -Lazy
+			   - Many to one - Eager
+			   - Many to Many - Lazy
+			   - One to One - Eager
+	   - JPA Cascade types
+	        - State change cascades from parent to child object
+		- Persist - save operations will cascade to related entities - 
+		- Merge - related entities are merged when the owned entity is merged
+		- Refresh - related entities are refreshed when the owned is refreshed
+		- Remove - If you delete parent, childs are deleted too
+		- Detach - detach related entities
+		- All - apply all above
+		By default - NO OPERATION IS CASCADED
+		
+	   - Embeddable Types
+	        - common set of properties like Address (Objects inside persisted JPA Entity)
+		
+	   - Inheritance
+	         - MappedSuperclass - DB table is not created for the super class
+		 - Single table - one table for all subclasses - Default!!
+		 - Joined table - base and subclasses has their own table
+		 - Table per class - each subclass its own table
+		 
+	   - Create and update timestamps
+	        - for audit purpose
+		 - JPA supports @PrePersist and @PreUpdate
+		 - Hibernate has @CreationTimestamp and @UpdateTimestamp 
+		
+	     
+	 
 	
 	 
 
