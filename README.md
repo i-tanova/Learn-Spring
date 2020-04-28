@@ -788,6 +788,28 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	        - for audit purpose
 		 - JPA supports @PrePersist and @PreUpdate
 		 - Hibernate has @CreationTimestamp and @UpdateTimestamp 
+		 
+- Recipes Data Model
+           - Recipe (*-* Category, 1-*I ngredient, 1-1 Note, 1-1 Difficulty, description, prepTime, directions, image)
+	   - Category - name
+	   - Ingredient - description, amount
+	   - Note - notes
+	   - Difficulty - enum: EASY, HARD
+	   
+- One to one
+     - One recipe, one note 1-1
+     - Put entities in package domain
+     - Recipe(Integer prepTime, String decription, Byte[] image)
+     - Notes (Recipe recipe, String notes)
+     
+     - Mark both as @Entity
+     - Add Long field id
+     - Mark it with @Id,  @GeneratedValue(strategy = GenerationType.IDENTITY)
+     - At Recipe add annotation above Notes declaration @OneToOne, (cascade = CascadeType.ALL) - delete notes when recipe is deleted
+     - At Notes add annotation above Recipe @OneToOne
+     - @Lob - this annotation tells to store an object as Blob - big data
+     - Add it above notes String and image Byte array
+     - Generate getters and setters for all fields
 		
 	     
 	 
