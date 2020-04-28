@@ -796,7 +796,7 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	   - Note - notes
 	   - Difficulty - enum: EASY, HARD
 	   
-- One to one
+- One to one (Recipe - Note)
      - One recipe, one note 1-1
      - Put entities in package domain
      - Recipe(Integer prepTime, String decription, Byte[] image)
@@ -810,6 +810,15 @@ https://tanzu.vmware.com/training/courses/core-spring-training
      - @Lob - this annotation tells to store an object as Blob - big data
      - Add it above notes String and image Byte array
      - Generate getters and setters for all fields
+     
+- One to many (Recipe - Ingredients)
+     - Recipe - Ingredients has 1-* and Ingredients- Recipe has 1-* relationship
+     - Create class Ingredient(Recipe recipe, description String, id Long)
+     - Annotate as @Entity, add @Id Generated
+     - In Recipe add property Set<Ingredient> ingredients
+     - Annotate it as @OneToMany and add cascade type = All, and mappedBy="recipe" - this is the field in Ingredient class
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+     - Go to Ingredient and annotate recipe field with @OneToMany
 		
 	     
 	 
