@@ -838,6 +838,16 @@ https://tanzu.vmware.com/training/courses/core-spring-training
         @Enumerated(value = EnumType.STRING)
 	
 - Many to Many JPA Relationships
+      - Recipe and Category has many to many relationships *_*
+      - Add Category with Set<Recipe> 
+	- In Recipe add Set<Category>
+      - Add @ManyToMany annotation both to Recipe and Category
+	- If you leave it that way it will create two tables - recipe_categories and categories_recipes
+      - In Recipe add @JoinTable(name="recipe_category", joinColumns="@JoinColumn)
+      - In Category add
+	@ManyToMany(mappedBy = "categories")
+       - Now we have only one table:
+	      - Recipe Category
 		
 	     
 	 
