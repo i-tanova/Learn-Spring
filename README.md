@@ -819,6 +819,25 @@ https://tanzu.vmware.com/training/courses/core-spring-training
      - Annotate it as @OneToMany and add cascade type = All, and mappedBy="recipe" - this is the field in Ingredient class
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
      - Go to Ingredient and annotate recipe field with @OneToMany
+	
+- Assignment - create one to one relationship between UnitOfMeasure and Ingredient table
+         - Create UnitOfMeasure Entity
+	 - Create Unidirectional relationship from Ingredient to Unit of measure
+	 - Do not cascade events
+	 
+	 @OneToOne(fetch = FetchType.EAGER)
+         private UnitOfMeasure unitOfMeasure;
+	 
+- JPA Enumerations
+       - in package domain add new -> enum Difficulty
+       - add it as field in Recipe
+       - add annotation @Enumerated
+       - add value = EnumType.ORDINAL  - Ordinal is default value. This is how it will be persisted.
+       - Ordinal means it will be persisted as numbers 1, 2, 3 - This means that if you add new value, all data will mess
+       - Use String!!
+        @Enumerated(value = EnumType.STRING)
+	
+- Many to Many JPA Relationships
 		
 	     
 	 
