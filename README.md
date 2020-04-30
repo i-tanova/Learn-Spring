@@ -861,7 +861,24 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	 - Add interfaces CategoryRepository, UnitOfMeasuer repository
 
 - Database initialization  30.04
-         - Hibernate DDL Auto
+         - Hibernate DDL Auto (Data Definition Language)
+	 - Hibernate property is set by the Spring
+	    spring.jpa.hibernate.ddl-auto
+	 - Options: none, validate, update, create, create-drop. Use validate on production
+	 - Spring boot uses create-drop for embedded db as h2, derby. Create drop drops the table at shutdow
+         - Initialize with Hibernate - load data from import.sql
+	 - Spring DataIntializer via Spring Boot loads from shema and data from the root of the classpath
+	 - can load and from platform specific files
+	 - Add file data.sql into resources folder
+	 insert into category(description) values ('american')
+insert into category(description) values ('mexican')
+insert into unit_of_measure(abbreviation) values ('kg')
+insert into unit_of_measure(abbreviation) values ('g')
+	 - Set dialect - MySql dialect
+	 - Run the application - data is entered
+	 - UnitOfMeasure will be unit_of_measure 
+	
+  
 
 	     
 	 
