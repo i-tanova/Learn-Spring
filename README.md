@@ -850,6 +850,18 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	      - Recipe Category
 	- Open h2 console here:
 	     http://localhost:8080/h2-console
+	
+- Creating Spring data repositories 30.04
+	- Cascade relationsips - Notes and Ingredients, update the one will updte the other
+	- We dont need to Set up repositories for Notes and Ingedients because Recipe is the main object (They are parts of it)
+	They are not maintained independently
+	- Recipe, Category, Unit of measures will have Spring data repositories
+	- Create package repositories
+	 - Add interface RecipeRepository extending CrudRepository (Spring class)
+	 - Add interfaces CategoryRepository, UnitOfMeasuer repository
+
+- Database initialization  30.04
+         - Hibernate DDL Auto
 
 	     
 	 
