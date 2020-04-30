@@ -848,7 +848,9 @@ https://tanzu.vmware.com/training/courses/core-spring-training
 	@ManyToMany(mappedBy = "categories")
        - Now we have only one table:
 	      - Recipe Category
-		
+	- Open h2 console here:
+	     http://localhost:8080/h2-console
+
 	     
 	 
 	
