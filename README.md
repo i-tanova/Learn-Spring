@@ -887,6 +887,14 @@ insert into unit_of_measure(abbreviation) values ('g')
        Category category = categoryRepository.findByDescription("american").get();
         System.out.println("Category is: " + category.getId());
 	
+- Assignment - List recipes - recreate from SimpleRecipes.com recipes for: perfect guacamole, spicy grilled chicken takos
+  - add directions
+  - add unito of measures
+  - list recipes
+  - Use Bootstrap class to add the two recipes
+  - Create service to return recipe list to controller
+  - Pass recipes list to Tymeleaf index page
+  
   
 
 	     
