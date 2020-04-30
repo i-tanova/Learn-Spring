@@ -877,6 +877,15 @@ insert into unit_of_measure(abbreviation) values ('g')
 	 - Set dialect - MySql dialect
 	 - Run the application - data is entered
 	 - UnitOfMeasure will be unit_of_measure 
+
+- Spring Data JPA Query methods
+     - just add method     Optional<Category> findByDescription(String description);
+	inside CategoryRepository interface
+	
+     - Inject category repositry inside RecipeController
+     - Call inside home() method
+       Category category = categoryRepository.findByDescription("american").get();
+        System.out.println("Category is: " + category.getId());
 	
   
 
