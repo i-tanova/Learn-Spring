@@ -940,7 +940,27 @@ insert into unit_of_measure(abbreviation) values ('g')
        - Identity - primary key
        - Auto - autogenerate, can give unpredictable results
 
-- 
+-  Issue #35. Convert Owner to JPA Entity
+      - Go to class Person
+      - Add @MappedSuperClass
+      - At fields add @Column and snake case naming
+      - @NotEmpty - this is constraint
+      - @Column(name="first_name")
+      
+      - Annotate Owner as @Entity
+      - add @Table(name="owners")
+      - add @Column to fields except for pets
+      - For pets Set add:
+       @ManyToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+       
+       - Annotate Pet as @Entity
+       - add @Table
+       - add @Column
+       - For Owner add @ManyToOne and @JoinColumn(name = "owner_id")
+       - For PetType add @ManyToOne and @JoinColumn name type_id
+       
+       - Annotate PetType
+       @Table("types") ??
        
 	
   
