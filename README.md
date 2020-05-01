@@ -895,16 +895,53 @@ insert into unit_of_measure(abbreviation) values ('g')
   - Create service to return recipe list to controller
   - Pass recipes list to Tymeleaf index page
   
-  
+  - Create RecipeService
+  - add method getAll
+  - Implemement using repository injection
+  - Add package bootstrap
+  - add class DataLoader that extends CommandLineRunner
+  - Create Recipe 
+         - add descriptiom
+	 - add directions
+	 - add difficulty
+	 - add prep time
+	 - Create Note
+	 - add note to recipe
+	 - Create Ingredients
+	 - Add to Recipe
 
-	     
-	 
-	
-	 
+- Pro tips using setters for JPA
+       - When we set Note object to Recipe we need to set Recipe object for Note
+       - Same for Ingredient object
+       
+       - Enhancement: When we do setNotes on Recipe object we can add code to set Recipe object back to Note object
+                 ```
+    public void setNotes(Notes notes) {
+        this.notes = notes;
+        notes.setRecipe(this);
+    }
+    ```
+   
+   Same for set Ingredient
+        ```
+   -     public void setIngredientSet(Set<Ingredient> ingredientSet) {
+        this.ingredientSet = ingredientSet;
+        ingredientSet.forEach(ingredient -> {ingredient.setRecipe(this);});
+    }
+         ```
+	   
+   - Spring Pet Clinic - Create Base Entity Issue #34
+       - getId, setId, isNew
+       - Go to data module - model.BaseEntity and annotate it with @MappedSuperclass
+       - Annotate id with @Id and GeneratedValue - strategy Identity
+       - Other strategies are Table, Sequence, Auto
+       - Table - based on the table count
+       - Sequence - next number in a sequence
+       - Identity - primary key
+       - Auto - autogenerate, can give unpredictable results
 
-	   
-     
-	   
+- 
+       
 	
   
 
