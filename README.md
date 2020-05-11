@@ -914,26 +914,27 @@ insert into unit_of_measure(abbreviation) values ('g')
        - When we set Note object to Recipe we need to set Recipe object for Note
        - Same for Ingredient object
        
-       - Enhancement: When we do setNotes on Recipe object we can add code to set Recipe object back to Note object
-                 ```
+     - Enhancement: When we do setNotes on Recipe object we can add code to set Recipe object back to Note object
+                
     public void setNotes(Notes notes) {
         this.notes = notes;
         notes.setRecipe(this);
     }
-    ```
+  
    
    Same for set Ingredient
-        ```
+        
    -     public void setIngredientSet(Set<Ingredient> ingredientSet) {
         this.ingredientSet = ingredientSet;
         ingredientSet.forEach(ingredient -> {ingredient.setRecipe(this);});
     }
-         ```
+        
 	   
-   - Spring Pet Clinic - Create Base Entity Issue #34
+- Issue #34. Spring Pet Clinic - Create Base Entity 
        - getId, setId, isNew
-       - Go to data module - model.BaseEntity and annotate it with @MappedSuperclass
-       - Annotate id with @Id and GeneratedValue - strategy Identity
+       - Go to data module - model package. Add BaseEntity and annotate it with @MappedSuperclass
+       - Makes it extend Serializable
+       - Annotate field "id" with @Id and GeneratedValue - strategy Identity
        - Other strategies are Table, Sequence, Auto
        - Table - based on the table count
        - Sequence - next number in a sequence
@@ -943,23 +944,22 @@ insert into unit_of_measure(abbreviation) values ('g')
 -  Issue #35. Convert Owner to JPA Entity
       - Go to class Person
       - Add @MappedSuperClass
-      - At fields add @Column and snake case naming
-      - @NotEmpty - this is constraint
+      - Add fields annotation @Column and snake case naming for columns
       - @Column(name="first_name")
       
       - Annotate Owner as @Entity
       - add @Table(name="owners")
       - add @Column to fields except for pets
-      - For pets Set add:
+      - For pets add:
        @ManyToMany(cascade = CascadeType.ALL, mappedBy = "owner")
        
-       - Annotate Pet as @Entity
+      - Annotate Pet as @Entity
        - add @Table
        - add @Column
        - For Owner add @ManyToOne and @JoinColumn(name = "owner_id")
        - For PetType add @ManyToOne and @JoinColumn name type_id
        
-       - Annotate PetType
+      - Annotate PetType
        @Table("types") ??
        
 	
