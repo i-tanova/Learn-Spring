@@ -931,7 +931,7 @@ insert into unit_of_measure(abbreviation) values ('g')
         
 	   
 - Issue #34. Spring Pet Clinic - Create Base Entity 
-       - getId, setId, isNew
+       - Classes that extend BaseEntity will inherit methods: getId, setId, isNew
        - Go to data module - model package. Add BaseEntity and annotate it with @MappedSuperclass
        - Makes it extend Serializable
        - Annotate field "id" with @Id and GeneratedValue - strategy Identity
@@ -960,8 +960,31 @@ insert into unit_of_measure(abbreviation) values ('g')
        - For PetType add @ManyToOne and @JoinColumn name type_id
        
       - Annotate PetType
-       @Table("types") ??
+       @@Entity
+       @Table(name = "types")
+       @Column(name = "name")
        
+- Issue 36. Convert Vets to JPAEntity
+    - Vet extends Person, and Person extends BaseEntity. One Vet can have many specialties and one Specialty many vets
+    - Add @Entity, @Table
+    - Add @ManyToMany for speciality set
+    -  @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"), inverseJoinColumns = @JoinColumn(name = "specialty_id"))
+       
+       
+    - Go to Specialty and add annotations @Entity, @Table, @Column
+    
+ - Issue 37. Create Visit Entity
+      - Go to Visit
+      - Add @Entity, @Table
+      - Add @Colum to fields date and description
+      - Go to Pet object and add a property Set<Visit> visits
+	- Note: Initialize sets with emtpy set
+      - Add following annotation to property visits
+	   @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+      - Go to Visits and on the Pet property add:
+	    @ManyToOne()
+            @JoinColumn(name = "pet_id")
 	
   
 
