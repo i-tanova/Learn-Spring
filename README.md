@@ -1008,6 +1008,12 @@ insert into unit_of_measure(abbreviation) values ('g')
 	 Set<Owner> allOwners = new HashSet<>();
         ownerRepisotory.findAll().forEach(allOwners::add);
         return allOwners;
+	
+- Issue 40. Create Service for Vets
+          - Same as Owner
+- Issue 41. Create Service for PetType
+- Issue 42. Create Service for Pet
+- Issue 43. Create Service for Specialty.
   
 
    
