@@ -991,7 +991,23 @@ insert into unit_of_measure(abbreviation) values ('g')
        - There a 3 major repository patterns - Crud, JPA, Pager..we will use Crud
        - Add interface OwnerRepository that extends CrudRepository<Owner, Long>
        - Add interfaces for all model objects
-       - Add service
+       - Spring will generate all needed code for the repo
+       
+- Issue 39. Create JPA Service
+       - Create package springdatajpa
+       - Create class OwnerJpaService that extends OwnerService
+       - Add annotation @Service
+       - Add OwnerRepository instance inside constructor
+       - Go to OwnerRepository and create method findByLastName
+       -  Owner findByLastName(String lastName);
+       - Spring will create the implementation
+       - Add implementation of findById as:
+        Optional<Owner> optional = ownerRepisotory.findById(aLong);
+        return optional.orElse(null);
+	- find all:
+	 Set<Owner> allOwners = new HashSet<>();
+        ownerRepisotory.findAll().forEach(allOwners::add);
+        return allOwners;
   
 
    
