@@ -985,7 +985,13 @@ insert into unit_of_measure(abbreviation) values ('g')
       - Go to Visits and on the Pet property add:
 	    @ManyToOne()
             @JoinColumn(name = "pet_id")
-	
+
+- Issue 38. Create Repository
+       - Create package repositories
+       - There a 3 major repository patterns - Crud, JPA, Pager..we will use Crud
+       - Add interface OwnerRepository that extends CrudRepository<Owner, Long>
+       - Add interfaces for all model objects
+       - Add service
   
 
    
