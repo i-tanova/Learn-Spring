@@ -1014,6 +1014,25 @@ insert into unit_of_measure(abbreviation) values ('g')
 - Issue 41. Create Service for PetType
 - Issue 42. Create Service for Pet
 - Issue 43. Create Service for Specialty.
+
+- Issue 45. Create Visit Service interface extends from CrudService
+            - Create Visit Map Servce extends AbstractMapService implements VisitService
+            - Create Visit Jpa Service - extend VisitService and add annotation @Service
+	    - Import private final VisitRepository as Repository
+            - Add checks when adding a visit - check if it has a Pet, check if this pet has owner and Id
+- Issue 47. Load Visit on Startup in Bootstrap
+                - Add VisitService inside LoadData constructor
+                - Just create visit object and save it
+- Use Spring profiles to switch from Map based Services to JPA
+      - If we don't specify profile - default wil be used
+      - Add annotatin to Map based Service - @Profile({"default", "map"})
+      - When we start the application it says "No active profile set, falling back to default profiles: default"
+      - Go to web module -> application.properties and add:
+            spring.profiles.active="springdatajpa"
+	 Now the application says: The following profiles are active: "springdatajpa"
+               
+
+        
   
 
    
