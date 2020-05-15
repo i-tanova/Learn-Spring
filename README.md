@@ -1030,6 +1030,38 @@ insert into unit_of_measure(abbreviation) values ('g')
       - Go to web module -> application.properties and add:
             spring.profiles.active="springdatajpa"
 	 Now the application says: The following profiles are active: "springdatajpa"
+
+## Project Lombok
+   -  Simplify code 
+   -  Features: val, var, @NonNull, @Cleanup, @Getter, @Setter, @ToString, @EqualsAndHashcode, @AllArgsConstructor
+   @Data - generates getters, setters, constructor,@Value, @Builder, @Getter(lazy=true)
+   @SLF4j - logging
+   -  For Intelij idea verify that you have enabled the "annotation" processing under compiler settings
+   
+   - Add dependency for project Lambok
+        - Go to Recipes app
+        - Add this to pom.xml:
+	  <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+	- Import the changes (Idea will notify)
+	- Install Idea Lombok plugin
+	- Go to domain/Notes and select form Idea menu -> Refactor > Lombok > Default data
+                @Data
+		@Entity
+		public class Notes {
+		    @Id
+		    @GeneratedValue(strategy = GenerationType.IDENTITY)
+		    private Long id;
+		    @Lob
+		    private String recipeNotes;
+		    @OneToOne
+		    private Recipe recipe;
+		}
+		
+	  - You can revert with Delambok
+
                
 
         
