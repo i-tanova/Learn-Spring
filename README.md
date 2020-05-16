@@ -1048,6 +1048,7 @@ insert into unit_of_measure(abbreviation) values ('g')
 	- Import the changes (Idea will notify)
 	- Install Idea Lombok plugin
 	- Go to domain/Notes and select form Idea menu -> Refactor > Lombok > Default data
+	It will put this @Data annotation and removes constructor. Generates getter, setter, cosntructor, to String, equals...
                 @Data
 		@Entity
 		public class Notes {
@@ -1059,8 +1060,15 @@ insert into unit_of_measure(abbreviation) values ('g')
 		    @OneToOne
 		    private Recipe recipe;
 		}
-		
-	  - You can revert with Delambok
+	 - You can revert with Delambok
+	 - Go to Category and refactor to Lambok
+	 - Go to Recipe and refactor to Lambok but MANUALY because we need to override some of these properties.
+	      - put @Data annotation
+	      - Leave setNotes and setIngrdientsSet
+	      - Remove rest of the getters and setters - Lambok will generate them
+	 - Go to services.RecipeServiceImpl and add SLF4J Lambok annotation
+	   This will inject a logger. Now write inside getRecipes - 
+	        > log.debug("Logging")
 
                
 
