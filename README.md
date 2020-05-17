@@ -1069,7 +1069,14 @@ insert into unit_of_measure(abbreviation) values ('g')
 	 - Go to services.RecipeServiceImpl and add SLF4J Lambok annotation
 	   This will inject a logger. Now write inside getRecipes - 
 	        > log.debug("Logging")
+		
+	 - Important: Invalidate cashe and restart Intellij IDEA in order Lambok to work
+	 ***** Note: When something bed happen: Invalidate cashe and restart.
 
+- Assignment: Refactor Recipe project to use Lambok
+            - Refactor all entities to use @Data
+	    - Use @slf4j on controller and bootstrap classes
+	    - Add some debug logging
                
 
         
