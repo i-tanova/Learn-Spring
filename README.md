@@ -1077,7 +1077,27 @@ insert into unit_of_measure(abbreviation) values ('g')
             - Refactor all entities to use @Data
 	    - Use @slf4j on controller and bootstrap classes
 	    - Add some debug logging
-               
+	    - If you run it like that it will crash with:
+	    Caused by: org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.ivana.tanova.recipesspringapp.domain.Category.recipeSet, could not initialize proxy - no Session
+	at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.ja
+	at com.ivana.tanova.recipesspringapp.domain.Category.hashCode(Category.java:8) ~[classes/:na]
+	Lambok can't generate equals and hash code
+               - Go to Category and add 
+	       @EqualsAndHashCode(exclude = {"recipeSet"})
+	       - Go to Ingredients and Note and add:
+	       @EqualsAndHashCode(exclude = {"recipe"})
+               - If you see Lazy initialization exception add @Transactional annotation
+	      
+- Issue 50. Refactor Spring pet clinic to use Lambok
+          - Don't use @Data on Entity use:
+	  @Getter, @Setter, @NoargsConstructor, @AllArgsConstructor, @Builder
+	  - Don't put @Builder annotation for Person as it is super class not meant to be initialized
+	  - Instead for Owner do constructor with all fields and add @Builder annotaion in front
+	  - Call Person.super(id, firstName, lastName) and BaseEntity.super(id)
+	  - Remove @AllArgsConstructor annotation from Owner
+	  - Now you can use builder patterm
+	   Owner.builder().setFirstName("name").build()
+	  
 
         
   
