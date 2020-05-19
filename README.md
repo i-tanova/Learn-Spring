@@ -1092,12 +1092,40 @@ insert into unit_of_measure(abbreviation) values ('g')
           - Don't use @Data on Entity use:
 	  @Getter, @Setter, @NoargsConstructor, @AllArgsConstructor, @Builder
 	  - Don't put @Builder annotation for Person as it is super class not meant to be initialized
-	  - Instead for Owner do constructor with all fields and add @Builder annotaion in front
+	  - Instead for Owner do constructor with all fieer
+Save to playlistlds and add @Builder annotaion in front
 	  - Call Person.super(id, firstName, lastName) and BaseEntity.super(id)
 	  - Remove @AllArgsConstructor annotation from Owner
 	  - Now you can use builder patterm
 	   Owner.builder().setFirstName("name").build()
+	   
+	   
+## Testing Spring Framework Applications
+- Get Bootstrap 
+      - Go to Recipe app and:
+      - Copy Bootstrap CDN links inside head:
+           bootstrap.min.js
+	   bootstrap.min.css
+      - Explore Bootstrap
+             <div class="container">
+	     
+## CRUD opearations
+- Using Web Jars with Spring Boot - web jars of popular
+WebJars are client-side web libraries (e.g. jQuery & Bootstrap) packaged into JAR (Java Archive) files.
+https://www.webjars.org/
+         - Grab Bootstrap, Jquery
+	 	
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>bootstrap</artifactId>
+    <version>4.5.0</version>
+</dependency>
+          - Go to Recipes app and put it there. Select "import changes" form Idea pop up
+	  - Go to templates/index.html and include jquery and bootstrap from web jar
+	  <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+          <script src="/webjars/jquery/jquery.min.js"></script>
 	  
+- Display Recipe by id
 
         
   
