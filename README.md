@@ -1126,8 +1126,13 @@ https://www.webjars.org/
           <script src="/webjars/jquery/jquery.min.js"></script>
 	  
 - Display Recipe by id
-
-        
+    - Here is how to display table in Timeleaf:
+       - https://www.baeldung.com/thymeleaf-list
+    - Here is how to style table in Bootstrap:
+    https://getbootstrap.com/docs/4.4/content/tables/
+    - <table class="table table-striped table-bordered table-hover">
+    - grid system with row and col.
+    -  <th scope="col"> ID</th>
   
 
    
