@@ -1124,6 +1124,10 @@ https://www.webjars.org/
 	  - Go to templates/index.html and include jquery and bootstrap from web jar
 	  <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
           <script src="/webjars/jquery/jquery.min.js"></script>
+	  - When we have bootstrap from web we want to just add link to the web jar with th:href like:
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"
+      th:href="@{/webjars/jquery/jquery.min.js}">
 	  
 - Display Recipe by id
     - Here is how to display table in Timeleaf:
@@ -1133,6 +1137,15 @@ https://www.webjars.org/
     - <table class="table table-striped table-bordered table-hover">
     - grid system with row and col.
     -  <th scope="col"> ID</th>
+
+    - Jquery dependency: Remove Jquery dependecy from maven because bootstrap has it inside
+    - See which version of jquery is inside bootstrap and add the link as:
+    <!-- Jquery Web Jar -->
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+   - Verify as restarting the application - right click on the browser to see the page source and then
+     click on the jquery link: There should be no error.
+     
+         
   
 
    
