@@ -1128,23 +1128,31 @@ https://www.webjars.org/
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"
       th:href="@{/webjars/jquery/jquery.min.js}">
-	  
-- Display Recipe by id
-    - Here is how to display table in Timeleaf:
+      
+   - Jquery dependency: Remove Jquery dependecy from maven because bootstrap has it inside
+    - See which version of jquery is inside bootstrap and add the link as:
+    <!-- Jquery Web Jar -->
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+   - Verify as restarting the application - right click on the browser to see the page source and then
+     click on the jquery link: There should be no error.
+  
+   - Here is how to display table in Timeleaf:
        - https://www.baeldung.com/thymeleaf-list
     - Here is how to style table in Bootstrap:
     https://getbootstrap.com/docs/4.4/content/tables/
     - <table class="table table-striped table-bordered table-hover">
     - grid system with row and col.
     -  <th scope="col"> ID</th>
+	
+- Display Recipe by id
+   - Add another table colmn called View
+   - Add following code inside the table data:
+   ```
+   <td><a href="#" th:href="@{'recipe/show/' + ${recipe.id}}" th:text="View">View</a> </td>
+   ```
+   - Now add tempates/recipe/show.html
 
-    - Jquery dependency: Remove Jquery dependecy from maven because bootstrap has it inside
-    - See which version of jquery is inside bootstrap and add the link as:
-    <!-- Jquery Web Jar -->
-<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
-   - Verify as restarting the application - right click on the browser to see the page source and then
-     click on the jquery link: There should be no error.
-     
+   
          
   
 
