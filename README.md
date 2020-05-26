@@ -1108,7 +1108,24 @@ Save to playlistlds and add @Builder annotaion in front
 	   bootstrap.min.css
       - Explore Bootstrap
              <div class="container">
-	     
+	
+## Testing
+- Test terms:
+       - Code under test - the application that we test
+       - Test fixture - well known fixed test environment where results will be repeatable  (input data, mocked objects, load database with well known data)
+       - Unit tests - code that tests code
+                - Code coverage - lines of code that are teststed
+		- Tests should be fast, do not rely on external environmment (db, spring context)
+	- Integration tests - integration with SQL for example, slow, large scale
+	- Functional tests - you are testing the running application, you test certain functionallities as calling a service
+	- TDD -test driven development
+	- BDD - behaviour driven development, Defines the behaviour of the code, use tools as: JBehave, Cucumber, Spock
+	example: given, when, then
+	- Mock object - fake implementataion of an object
+	- Spy - partial mock of an object
+	- Test goals - it is a pyramid: Unit tests, Integration tests and then over the top - functional tests
+	
+	
 ## CRUD opearations
 - Using Web Jars with Spring Boot - web jars of popular
 WebJars are client-side web libraries (e.g. jQuery & Bootstrap) packaged into JAR (Java Archive) files.
