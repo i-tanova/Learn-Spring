@@ -1168,6 +1168,26 @@ https://www.webjars.org/
    <td><a href="#" th:href="@{'recipe/show/' + ${recipe.id}}" th:text="View">View</a> </td>
    ```
    - Now add tempates/recipe/show.html
+   
+   
+  ## Tests
+  - Prefer JUnit tests
+  other forms are: Integration tests, Functional tests
+  
+  - Recipe app. See that you have automatically generated tests package with one test -> RecipesSpringAppApplicationTests
+  - How to create tests:
+        - Go to domain package -> Ctegory class
+	- Alt + Enter - create test
+	- Choose getId, getRecipeSet, getDescription
+	- Go to the create test and add property Category
+	- Add method that initialize category and annotate with @BeforeEach
+	- https://junit.org/junit5/docs/current/user-guide/#writing-tests
+	- In the @Test getId add following lines
+	```
+	category.setId(4l);
+        assertEquals(4l, category.getId());
+	```
+	
 
    
          
