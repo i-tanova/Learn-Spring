@@ -1188,6 +1188,21 @@ https://www.webjars.org/
         assertEquals(4l, category.getId());
 	```
 	
+	- Mockito tests
+	    - Go to RecipesServiceImpl, click create test
+	    - In the test class add properties
+	 
+	 ```
+    RecipesServiceImpl recipesService;
+    @Mock
+    RecipeRepository recipeRepository;
+    ```
+            - Add @BeforeAll setup method and there call:
+	     MockitoAnnotations.initMocks(this);
+	    - and create recipe service with mocked repository
+        recipesService = new RecipesServiceImpl(recipeRepository);
+    
+	
 
    
          
